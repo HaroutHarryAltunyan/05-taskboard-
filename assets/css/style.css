@@ -1,16 +1,53 @@
+/* General Body Styling */
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 16px;
 }
 
+/* Swim Lanes */
 .swim-lanes {
   min-height: 60vh;
 }
 
+/* Task Card Styling */
 .task-card {
   margin: 0 auto;
+  width: 180px;
+  height: 150px;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px whitesmoke;
+  cursor: move;
+  position: relative; /* Needed for z-index */
+  z-index: 1; /* Default z-index */
+  transition: background-color 0.3s;
 }
 
+/* Task Card Hover Effect */
 .task-card:hover {
   cursor: grab;
+  background-color: #a09090;
+}
+
+/* Dragging State for Task Cards */
+.task-card.dragging {
+  z-index: 1000; /* Higher z-index while dragging */
+  opacity: 0.7; /* Slight transparency for dragging effect */
+}
+
+/* Task Status-Specific Styling */
+.todo-card {
+  background-color: rgb(58, 197, 76);
+  border: 1px solid darkgreen;
+}
+
+.inprogress-card {
+  background-color: rgb(230, 255, 87);
+  border: 1px solid rgb(204, 207, 6);
+}
+
+.done-card {
+  background-color: rgb(230, 19, 19);
+  border: 1px solid rgb(189, 19, 34);
 }
